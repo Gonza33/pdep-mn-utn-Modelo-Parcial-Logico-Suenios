@@ -74,4 +74,5 @@ cumpleCondicionAlegrar(Personaje):- estaEnfermo(Personaje), sonAmigos(Personaje,
 sinEnfermedad(Personaje):- not(estaEnfermo(Personaje)).
 
 sonAmigos(Personaje,Amigo):- esAmigo(Personaje,Amigo).
-sonAmigos(Personaje,Amigo):- esAmigo(Personaje,AmigoIntermedio),esAmigo(AmigoIntermedio,Amigo), AmigoIntermedio \= Amigo, AmigoIntermedio \= Personaje.
+%sonAmigos(Personaje,Amigo):- esAmigo(Personaje,AmigoIntermedio),esAmigo(AmigoIntermedio,Amigo), AmigoIntermedio \= Amigo, AmigoIntermedio \= Personaje.
+sonAmigos(Personaje,Amigo):- esAmigo(Personaje,OtroAmigo), sonAmigos(OtroAmigo,Amigo).
